@@ -1,0 +1,155 @@
+@font-face {
+    font-family: "GmarketSansBold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GmarketSansLight";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+//변수값들 선언하기
+$링크메인: #333333;
+$설명글자: #f7f7f7;
+$제목글자: 24px;
+$기본글자: 16px;
+$mobile767: 767px;
+$mobile360: 360px;
+
+//position mixin
+@mixin pos($p: absolute, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $p;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+//respond mixin
+@mixin respond($size) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+
+.Wrap {
+    font-family: "GmarketSansLight", sans-serif;
+    word-break: keep-all;
+    width: 100%;
+    @include pos($p:relative, $left:50%);
+    margin: 50 auto;
+    color: $링크메인;
+    transform: translateX(-50%);
+
+    section {
+        h2 {
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        >p {
+            text-align: center;
+            padding-top: 35px;
+            @include respond($mobile767) {
+                padding-top: 50px;
+                }
+        }
+
+        .btn {
+            overflow: hidden;
+            @include pos($top:43%, $left:50%);
+            transform: translateX(-50%);
+            @include respond($mobile360) {
+                width: 73%;
+            }
+
+            li {
+                float: left;
+
+                a {
+                    display: block;
+                    padding: 10px 20px;
+                    background: #ccc;
+                    color: white;
+                    border-left: 1px solid transparent;
+                    border-top: 1px solid transparent;
+                    border-right: 1px solid transparent;
+                    text-align: center;
+                    font-size: $제목글자;
+                    @include respond($mobile767) {
+                        font-size: 18px;
+                        }
+                        @include respond($mobile360) {
+                            font-size: $기본글자;
+                            }
+                }
+
+                &.active>a {
+
+                    border: 1px solid #fff;
+                    background: #222;
+                    color: white;
+                }
+            }
+        }
+
+        .tabList {
+            position: relative;
+
+            ul {
+                position: absolute;
+                border: 1px solid #ccc;
+                background: white;
+                width: 100%;
+                box-sizing: border-box;
+                padding-left: 2%;
+                @include respond($mobile767) {
+                    @include pos($left:50%);
+                    transform: translateX(-50%);
+                    padding-left:2%;
+                    width: 95%;
+                }
+
+                li {
+                    width: calc(100% / 3);
+                    line-height: 3;
+                    float: left;
+                    @include respond($mobile767) {
+                        padding:15px 0;
+                    }
+                    div {
+                        position: absolute;
+                        @include respond($mobile767) {
+                        padding:0;
+                        }
+                    }
+                    
+                    a {
+                        img {
+                            width: 95%;
+                            display: block;
+
+                            @include respond($mobile767) {
+                                width: 95%;
+                            }
+                        }
+
+                        p:nth-child(3) {
+                            border-radius: 50px;
+                            background: rgb(255, 0, 0);
+                            color: #ffffff;
+                            width: 45px;
+                            text-align: left;
+                            padding: 0 5px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,370 @@
+@font-face {
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+//변수값들 선언하기
+$메인컬러:#fbb040;
+$링크메인: #333333;
+$설명글자: #f7f7f7;
+$제목글자: 24px;
+$기본글자: 16px;
+$mobile767: 767px;
+$mobile360: 360px;
+
+//position mixin
+@mixin pos($p: absolute, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $p;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+//respond mixin
+@mixin respond($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
+/* 레이아웃 */
+body {
+  font-family: "GmarketSansLight", sans-serif;
+  word-break: keep-all;
+  line-height: 2;
+  @include pos($left: 0%);
+
+  @include respond($mobile767) {
+    font-size: 14px;
+    color: $링크메인;
+  }
+  header {
+    font-family: "GmarketSansBold", sans-serif;
+
+    .mham {
+      display: none;
+      background: url(../icon/icon_ham.svg) no-repeat;
+      width: 50px;
+      height: 50px;
+      @include pos($p: absolute, $top: 0px);
+      z-index: 1;
+
+      @include respond($mobile767) {
+        display: block;
+        a{
+             padding:25px;
+        }
+     
+      }
+
+      &.active {
+        background-size: 45px;
+        background: url(../icon/icon_ham1.svg) no-repeat;
+        z-index: 11;
+      }
+    }
+    #menu {
+      position: fixed;
+      z-index: 10;
+      padding: 3px;
+      line-height: 5;
+
+      @include respond($mobile767) {
+        @include pos($p: absolute, $top: 0px);
+        background: rgba(255, 192, 203, 0.5);
+        height: 100%;
+        left: -100%;
+        display: block;
+      }
+
+      li {
+        display: inline;
+        list-style: none;
+        margin: 10px;
+
+        @include respond($mobile767) {
+          display: block;
+        }
+
+        &:first-child a {
+          background: none;
+        }
+      }
+
+      a {
+        padding: 10px 30px;
+        background: $메인컬러;
+        border-radius: 45px;
+
+        &:hover {
+          text-decoration: underline 5px;
+          text-decoration-color: gold;
+        }
+
+        img {
+          width: 70px;
+
+        }
+
+      }
+    }
+
+  }
+
+  .section {
+    video {
+      width: 50%;
+      float: left;
+      height: 970px;
+      object-fit: cover;
+
+      @include respond($mobile767) {
+        width: 100%;
+        height: 50%;
+      }
+    }
+
+    span {
+      a {
+        img {
+          float: left;
+          width: 50%;
+        }
+      }
+    }
+
+    p {
+      display: inline;
+
+      a {
+        img {
+          width: 25%;
+          margin: 0 auto;
+          object-fit: contain;
+          float: right;
+
+          @include respond($mobile767) {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    .drink {
+      font-size: $제목글자;
+      display: block;
+      text-align: center;
+      @include pos($top:15%, $left:50%);
+      transform: translateX(-50%);
+    }
+
+    .drink1 {
+      font-size: $기본글자;
+      display: block;
+      text-align: center;
+      @include pos($top:24%, $left:50%);
+      transform: translateX(-50%);
+    }
+
+    .slide {
+      padding-top: 160px;
+      font-size: 100px;
+      text-align: center;
+
+      span {
+        a {
+          img {
+            width: 33.333%;
+          }
+        }
+      }
+
+      p {
+        a {
+          img {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+
+    .leaflet {
+      transform: translateX(15%);
+
+      @include respond($mobile767) {
+        transform: translateX(0%);
+        padding-top: 10%;
+      }
+    }
+
+    &:nth-child(2) {
+      .strawberry {
+        text-align: center;
+      }
+
+      h2 {
+        padding-top: 30%;
+
+        a {
+          font-size: $제목글자;
+          color: palevioletred;
+        }
+      }
+
+      p {
+        display: block;
+        line-height: 3.5;
+
+        a {
+          padding: 20% 0;
+          font-size: $기본글자;
+        }
+      }
+
+      span {
+        a {
+          img {
+            @include respond($mobile767) {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      span {
+        padding-left: 10%;
+        padding: 15px 0;
+
+        @include respond($mobile767) {
+          padding-left: 30%;
+          padding: 0;
+          margin: 0 auto;
+
+          a {
+            img {
+              width: 55%;
+              // display: none;
+            }
+          }
+        }
+
+        &:last-child {
+          font-family: "GmarketSansBold", sans-serif;
+          color: #222222;
+          padding: 15px;
+          background: #fff;
+          border-radius: 45px;
+        }
+
+        a {
+          line-height: 10;
+          padding: 15px 0;
+          font-family: "GmarketSansBold", sans-serif;
+          color: #222222;
+          background: #fff;
+          border-radius: 45px;
+
+          &:hover {
+            text-decoration: underline 5px;
+            text-decoration-color: gold;
+          }
+        }
+      }
+
+      p {
+        a {
+          img {
+            float: left;
+            width: 50%;
+
+            @include respond($mobile767) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      span {
+        a {
+          img {
+            float: left;
+            width: 20%;
+
+            @include respond($mobile767) {
+              width: 25%;
+            }
+          }
+        }
+
+      }
+
+      .insta {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50px;
+
+        @include respond($mobile767) {
+          top: 1%;
+        }
+
+        a {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    footer {
+      text-align: center;
+      color: #fff;
+
+      div {
+        padding: 2% 0;
+      }
+
+      .left {
+        float: left;
+      }
+
+      .right {
+        float: right;
+      }
+
+      .center {
+        float: left;
+        padding: 6.5% 3.5%;
+
+        @include respond($mobile767) {
+          padding: 0;
+        }
+      }
+
+      p {
+        display: block;
+
+        span {
+          padding: 0 15px;
+        }
+      }
+
+    }
+  }
+
+}

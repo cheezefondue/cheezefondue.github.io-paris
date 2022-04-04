@@ -1,0 +1,185 @@
+@font-face {
+    font-family: "GmarketSansBold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GmarketSansLight";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+//변수값들 선언하기
+$링크메인: #333333;
+$설명글자: #f7f7f7;
+$제목글자: 24px;
+$기본글자: 16px;
+$mobile767: 767px;
+$mobile360: 360px;
+
+//position mixin
+@mixin pos($p: absolute, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $p;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+//respond mixin
+@mixin respond($size) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+
+.Wrap {
+    font-family: "GmarketSansLight", sans-serif;
+    word-break: keep-all;
+    color: $링크메인;
+    padding-top: 150px;
+    @include pos($left:50%);
+    transform: translateX(-50%);
+    line-height: 2;
+
+    @include respond($mobile767) {
+        width: 100%;
+    }
+
+    section {
+        .innerBox {
+            @include pos($p:relative, $left:50%);
+            transform: translateX(-50%);
+
+            .bg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                z-index: 10;
+                display: none;
+            }
+
+            .popupImg {
+                position: absolute;
+                width: 70%;
+                padding-top: 50%;
+                @include respond($mobile767) {
+                    width:100%;
+                    padding-top: 75%;
+                }
+                background-color: white;
+                background-size: 100%;
+                background-position: initial;
+                z-index: 100;
+                display: none;
+                padding-bottom: 100px;
+            }
+
+            span {
+                float: left;
+                width: 50%;
+
+                @include respond($mobile767) {
+                    width: 100%;
+                }
+
+                a {
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
+                }
+
+            }
+
+            .heart {
+                span {
+                    width: 10%;
+                    a {
+                        padding: 16px;
+                        background: url(../icon/icon_heart.svg) no-repeat center center;
+
+                        &.active {
+                            content: "";
+                            width: 0px;
+                            height: 0px;
+                            background: url(../icon/icon_heart1.svg) no-repeat center center;
+                            // position: absolute;
+                            right: 0;
+                            transition: 0s;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .cake {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 35px;
+
+            p {
+                img {
+                    @include respond($mobile767) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .btn {
+                overflow: hidden;
+                @include pos($p:relative, $top:43%, $left:50%);
+                transform: translateX(-50%);
+
+                @include respond($mobile360) {
+                    width: 73%;
+                }
+
+                li {
+                    width: 33%;
+                    float: left;
+
+                    @include respond($mobile767) {
+                        width: 100%;
+                    }
+
+                    a {
+                        display: block;
+                        padding: 0 84px;
+                        background: #ccc;
+                        color: white;
+                        border-left: 1px solid transparent;
+                        border-top: 1px solid transparent;
+                        border-right: 1px solid transparent;
+                        text-align: center;
+                        font-size: $제목글자;
+
+                        @include respond($mobile767) {
+                            font-size: 18px;
+                        }
+
+                        @include respond($mobile360) {
+                            font-size: $기본글자;
+                        }
+                    }
+
+                    &.active>a {
+
+                        border: 1px solid #fff;
+                        background: #222;
+                        color: white;
+                    }
+                }
+            }
+
+
+        }
+
+    }
+}

@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GmarketSansLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.Wrap {
+  font-family: "GmarketSansLight", sans-serif;
+  word-break: keep-all;
+  color: #333333;
+  padding-top: 150px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  line-height: 2;
+}
+@media screen and (max-width: 767px) {
+  .Wrap {
+    width: 100%;
+  }
+}
+.Wrap section .innerBox {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.Wrap section .innerBox .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  display: none;
+}
+.Wrap section .innerBox .popupImg {
+  position: absolute;
+  width: 70%;
+  padding-top: 50%;
+  background-color: white;
+  background-size: 100%;
+  background-position: initial;
+  z-index: 100;
+  display: none;
+  padding-bottom: 100px;
+}
+@media screen and (max-width: 767px) {
+  .Wrap section .innerBox .popupImg {
+    width: 100%;
+    padding-top: 75%;
+  }
+}
+.Wrap section .innerBox span {
+  float: left;
+  width: 50%;
+}
+@media screen and (max-width: 767px) {
+  .Wrap section .innerBox span {
+    width: 100%;
+  }
+}
+.Wrap section .innerBox span a img {
+  width: 100%;
+  display: block;
+}
+.Wrap section .innerBox .heart span {
+  width: 10%;
+}
+.Wrap section .innerBox .heart span a {
+  padding: 16px;
+  background: url(../icon/icon_heart.svg) no-repeat center center;
+}
+.Wrap section .innerBox .heart span a.active {
+  content: "";
+  width: 0px;
+  height: 0px;
+  background: url(../icon/icon_heart1.svg) no-repeat center center;
+  right: 0;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+.Wrap section .cake {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 35px;
+}
+@media screen and (max-width: 767px) {
+  .Wrap section .cake p img {
+    width: 100%;
+  }
+}
+.Wrap section .cake .btn {
+  overflow: hidden;
+  position: relative;
+  top: 43%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@media screen and (max-width: 360px) {
+  .Wrap section .cake .btn {
+    width: 73%;
+  }
+}
+.Wrap section .cake .btn li {
+  width: 33%;
+  float: left;
+}
+@media screen and (max-width: 767px) {
+  .Wrap section .cake .btn li {
+    width: 100%;
+  }
+}
+.Wrap section .cake .btn li a {
+  display: block;
+  padding: 0 84px;
+  background: #ccc;
+  color: white;
+  border-left: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  text-align: center;
+  font-size: 24px;
+}
+@media screen and (max-width: 767px) {
+  .Wrap section .cake .btn li a {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .Wrap section .cake .btn li a {
+    font-size: 16px;
+  }
+}
+.Wrap section .cake .btn li.active > a {
+  border: 1px solid #fff;
+  background: #222;
+  color: white;
+}
