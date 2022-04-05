@@ -70,6 +70,19 @@ html.fp-enabled,
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
 }
+@media screen and (max-width: 360px) {
+    .fp-controlArrow {
+    top: 80%;
+    }
+    .fp-controlArrow.fp-prev {
+        left: 10px;
+        border-width: 28.5px 24px 28.5px 0;
+    }
+    .fp-controlArrow.fp-next {
+        right: 10px;
+        border-width: 28.5px 0 28.5px 24px;
+    }
+}
 .fp-controlArrow.fp-prev {
     left: 50px;
     width: 0;
@@ -216,12 +229,6 @@ html.fp-enabled,
 .fp-auto-height .fp-slide,
 .fp-auto-height .fp-tableCell{
     height: auto !important;
-}
-@media screen and (max-width: 767px){
-    .fp-auto-height.fp-section,
-    .fp-auto-height .fp-slide,
-    .fp-auto-height .fp-tableCell{
-        height: 100%;
 }
 
 .fp-responsive .fp-auto-height-responsive.fp-section,

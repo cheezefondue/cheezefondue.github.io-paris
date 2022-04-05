@@ -41,14 +41,14 @@
 .Wrap .innerBox section p:nth-child(2) {
   font-size: 16px;
 }
-.Wrap .innerBox section p {
+.Wrap .innerBox section h4, .Wrap .innerBox section p {
   text-align: left;
   padding-top: 15px;
   -webkit-transform: translateX(-55%);
           transform: translateX(-55%);
 }
 @media screen and (max-width: 767px) {
-  .Wrap .innerBox section p {
+  .Wrap .innerBox section h4, .Wrap .innerBox section p {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
   }

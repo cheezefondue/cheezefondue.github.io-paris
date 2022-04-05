@@ -70,8 +70,11 @@
   width: 100%;
   display: block;
 }
+.Wrap section .innerBox .heart {
+  height: 20px;
+}
 .Wrap section .innerBox .heart span {
-  width: 10%;
+  display: inline;
 }
 .Wrap section .innerBox .heart span a {
   padding: 16px;
@@ -82,9 +85,32 @@
   width: 0px;
   height: 0px;
   background: url(../icon/icon_heart1.svg) no-repeat center center;
-  right: 0;
+  position: relative;
   -webkit-transition: 0s;
   transition: 0s;
+}
+.Wrap section .innerBox .heart p {
+  padding: 0 16px;
+  display: inline;
+  position: absolute;
+  left: 53%;
+}
+@media screen and (max-width: 767px) {
+  .Wrap section .innerBox .heart p {
+    padding-left: 16px;
+    left: 20px;
+    overflow: hidden;
+  }
+}
+.Wrap section .innerBox p {
+  padding-top: 15px;
+}
+.Wrap section .innerBox p a {
+  line-height: 4.5;
+}
+.Wrap section .innerBox p a img {
+  padding: 0 5px;
+  width: 60px;
 }
 .Wrap section .cake {
   width: 100%;
