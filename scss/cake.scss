@@ -46,14 +46,12 @@ $mobile767: 767px;
         text-align: center;
         padding-top: 35px;
     }
-
-    // div {
+    
         a {
             img {
                 @include pos($p:relative, $left:50%);
                 transform: translateX(-50%);
             }
-        // }
 
     }
     .innerBox {
@@ -69,7 +67,7 @@ $mobile767: 767px;
                 font-size: $기본글자;
             }
 
-            p {
+            h4, p {
                 text-align: left;
                 padding-top: 15px;
                 transform: translateX(-55%);

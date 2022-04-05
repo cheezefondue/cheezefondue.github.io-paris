@@ -9,12 +9,12 @@ $(function(){
             if($(this).hasClass("active")){
                 $(this).removeClass("active")
                 Count--;
-                $(".heart>a").text(Count);
+                $(".heart span").next().text(Count);
             }
             else{
                 $(this).addClass("active");
                 Count++;
-                $(".heart>a").text(Count);
+                $(".heart span").next().text(Count);
             }
         })
 

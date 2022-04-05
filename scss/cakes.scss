@@ -67,10 +67,12 @@ $mobile360: 360px;
                 position: absolute;
                 width: 70%;
                 padding-top: 50%;
+
                 @include respond($mobile767) {
-                    width:100%;
+                    width: 100%;
                     padding-top: 75%;
                 }
+
                 background-color: white;
                 background-size: 100%;
                 background-position: initial;
@@ -97,25 +99,50 @@ $mobile360: 360px;
             }
 
             .heart {
+                height:20px;
                 span {
-                    width: 10%;
+                    display: inline;
                     a {
                         padding: 16px;
                         background: url(../icon/icon_heart.svg) no-repeat center center;
-
+                       
                         &.active {
                             content: "";
                             width: 0px;
                             height: 0px;
                             background: url(../icon/icon_heart1.svg) no-repeat center center;
-                            // position: absolute;
-                            right: 0;
+                            position: relative;
                             transition: 0s;
                         }
                     }
                 }
+                p{
+                    padding: 0 16px;
+                    display: inline;
+                    position: absolute;
+                    left: 53%;
+                    @include respond($mobile767) {
+                        padding-left:16px;
+                        left: 20px;
+                        overflow: hidden;
+                    }
+                }
             }
 
+            
+                p { 
+                    padding-top: 15px;
+                   
+                    a {
+                       line-height: 4.5;
+                        img {
+                            padding: 0 5px;
+                            width: 60px;
+                        }
+                    }
+
+        
+            }
         }
 
         .cake {

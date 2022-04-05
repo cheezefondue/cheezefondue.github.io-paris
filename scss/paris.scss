@@ -16,7 +16,7 @@
 $메인컬러:#fbb040;
 $링크메인: #333333;
 $설명글자: #f7f7f7;
-$제목글자: 24px;
+$제목글자: 1.2em;
 $기본글자: 16px;
 $mobile767: 767px;
 $mobile360: 360px;
@@ -44,7 +44,8 @@ body {
   line-height: 2;
   @include pos($left: 0%);
 
-  @include respond($mobile767) {
+  @include respond($mobile360) {
+    line-height: 1;
     font-size: 14px;
     color: $링크메인;
   }
@@ -198,37 +199,43 @@ body {
       }
     }
 
-
-    .leaflet {
-      transform: translateX(15%);
-
-      @include respond($mobile767) {
-        transform: translateX(0%);
-        padding-top: 10%;
-      }
-    }
-
     &:nth-child(2) {
       .strawberry {
         text-align: center;
+        position: absolute;
+        width: 25%;
+        right:25%;
+        padding-top: 22%;
+        @include respond($mobile767) {
+        position: relative;
+        width: 100%;
+        right:0%;
+        }
       }
 
       h2 {
         padding-top: 30%;
-
         a {
           font-size: $제목글자;
           color: palevioletred;
+          @include respond($mobile360) {
+          font-size:$기본글자;
+          }
         }
       }
-
       p {
         display: block;
-        line-height: 3.5;
-
+        line-height: 3;
+        @include respond($mobile360) {
+          line-height: 1.7;
+          }
         a {
           padding: 20% 0;
           font-size: $기본글자;
+          @include respond($mobile360) {
+            font-size:14px;
+            padding: 0;
+            }
         }
       }
 
@@ -242,7 +249,14 @@ body {
         }
       }
     }
+    .leaflet {
+      transform: translateX(15%);
 
+      @include respond($mobile767) {
+        transform: translateX(0%);
+        padding-top: 10%;
+      }
+    }
     &:nth-child(4) {
       span {
         padding-left: 10%;
@@ -252,11 +266,9 @@ body {
           padding-left: 30%;
           padding: 0;
           margin: 0 auto;
-
           a {
             img {
               width: 55%;
-              // display: none;
             }
           }
         }
@@ -276,7 +288,6 @@ body {
           color: #222222;
           background: #fff;
           border-radius: 45px;
-
           &:hover {
             text-decoration: underline 5px;
             text-decoration-color: gold;
@@ -334,9 +345,18 @@ body {
     footer {
       text-align: center;
       color: #fff;
-
+      @include respond($mobile767) {
+        line-height: 3;
+       }
+      @include respond($mobile360) {
+       font-size: 0.9em;
+       line-height: 1.8;
+      }
       div {
         padding: 2% 0;
+        @include respond($mobile360) {
+          padding: 1% 0;
+         }
       }
 
       .left {
@@ -345,6 +365,9 @@ body {
 
       .right {
         float: right;
+        @include respond($mobile360) {
+          display: none;
+         }
       }
 
       .center {
