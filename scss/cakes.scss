@@ -41,7 +41,7 @@ $mobile360: 360px;
     word-break: keep-all;
     color: $링크메인;
     padding-top: 150px;
-    @include pos($left:50%);
+    @include pos($p:absolute, $left:50%);
     transform: translateX(-50%);
     line-height: 2;
 
@@ -65,20 +65,41 @@ $mobile360: 360px;
 
             .popupImg {
                 position: absolute;
-                width: 70%;
-                padding-top: 50%;
-
-                @include respond($mobile767) {
-                    width: 100%;
-                    padding-top: 75%;
-                }
-
                 background-color: white;
                 background-size: 100%;
                 background-position: initial;
                 z-index: 100;
                 display: none;
-                padding-bottom: 100px;
+                padding-bottom: 50px;
+                width: 100%;
+                height: 500px;
+
+                @include respond($mobile767) {
+                    position: absolute;
+                    height: 50%;
+                }
+            }
+
+            .right {
+                h1 {
+                    a {
+                        position: absolute;
+                        top: 33px;
+                        padding-left: 250px;
+
+                        @include respond($mobile767) {
+                            position: relative;
+                            top: 0;
+                            float: right;
+                        }
+
+                        img {
+                            width: 50px;
+                            display: inline;
+
+                        }
+                    }
+                }
             }
 
             span {
@@ -99,13 +120,15 @@ $mobile360: 360px;
             }
 
             .heart {
-                height:20px;
+                height: 20px;
+
                 span {
                     display: inline;
+
                     a {
                         padding: 16px;
                         background: url(../icon/icon_heart.svg) no-repeat center center;
-                       
+
                         &.active {
                             content: "";
                             width: 0px;
@@ -116,32 +139,35 @@ $mobile360: 360px;
                         }
                     }
                 }
-                p{
+
+                p {
                     padding: 0 16px;
                     display: inline;
                     position: absolute;
                     left: 53%;
+
                     @include respond($mobile767) {
-                        padding-left:16px;
+                        padding-left: 16px;
                         left: 20px;
                         overflow: hidden;
                     }
                 }
             }
 
-            
-                p { 
-                    padding-top: 15px;
-                   
-                    a {
-                       line-height: 4.5;
-                        img {
-                            padding: 0 5px;
-                            width: 60px;
-                        }
-                    }
 
-        
+            p {
+                padding-top: 15px;
+
+                a {
+                    line-height: 4.5;
+
+                    img {
+                        padding: 0 5px;
+                        width: 60px;
+                    }
+                }
+
+
             }
         }
 
@@ -178,7 +204,6 @@ $mobile360: 360px;
 
                     a {
                         display: block;
-                        padding: 0 84px;
                         background: #ccc;
                         color: white;
                         border-left: 1px solid transparent;
@@ -196,15 +221,84 @@ $mobile360: 360px;
                         }
                     }
 
-                    &.active>a {
-
-                        border: 1px solid #fff;
-                        background: #222;
-                        color: white;
+                    &.active {
+                        a {
+                            border: 1px solid #fff;
+                            background: #222;
+                            color: white;
+                        }
                     }
                 }
             }
 
+            .tabList {
+                #reviews {
+                    display: none;
+                    li {
+                        padding: 35px;
+
+                        a {
+                            padding: 5px 10px;
+                            background-color: #fbb040;
+                            font-size: $기본글자;
+                            border-radius: 50px;
+                            line-height: 5;
+                        }
+
+                    }
+                }
+
+                #QA {
+                    display: none;
+                        border: 1px solid #fbb040;
+                        margin: 35px;
+                        @include respond($mobile767) {
+                            margin:0;
+                        }
+                    li {
+                        padding: 15px;
+                        display: flex;
+                        justify-content: space-evenly;
+                        @include respond($mobile767) {
+                            padding: 0;
+                        }
+                        span {
+                            text-align: center;
+                            width: 25%;
+                        }
+
+                        span:nth-child(2) {
+                            width: 35%;
+                        @include respond($mobile767) {
+                            width: 100%;
+                            }
+                        }
+
+
+                        &:first-child {
+                            span {
+                                background-color: #fbb040;
+                                font-size: $기본글자;
+                                border-radius: 50px;
+                                width: 100px;
+                                @include respond($mobile767) {
+                                   margin: 15px 0;
+                                } 
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            span {
+                                background-color: #fbb040;
+                                font-size: $기본글자;
+                                @include respond($mobile767) {
+                                    margin: 15px 0;
+                                 } 
+                            }
+                        }
+                    }
+                }
+            }
 
         }
 

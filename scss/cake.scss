@@ -69,7 +69,7 @@ $mobile767: 767px;
 
             h4, p {
                 text-align: left;
-                padding-top: 15px;
+                padding: 5px 0;
                 transform: translateX(-55%);
                 @include respond($mobile767){
                     transform: translateX(0%);

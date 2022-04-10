@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+//변수값들 선언하기
+$메인컬러:#fbb040;
+$링크메인: #333333;
+$설명글자: #f7f7f7;
+$제목글자: 1.2em;
+$기본글자: 16px;
+$mobile767: 767px;
+$mobile425: 425px;
+$mobile360: 360px;
+
+//position mixin
+@mixin pos($p: absolute, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $p;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+//respond mixin
+@mixin respond($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+section {
+  font-family: "GmarketSansBold", sans-serif;
+  color: $메인컬러;
+  @include pos($p:relative, $left:50%, $top:200px);
+  transform: translateX(-50%);
+  text-align: center;
+  h1{
+    img {
+      padding-top: 5%;
+      width: 10%;
+      
+      @include respond($mobile767){
+        padding-top: 15%;
+        width: 10%;
+      }
+    }
+  }
+    div{  
+        padding-bottom: 6%;
+        @include pos($p:relative, $left:50%);
+        transform: translateX(-50%);
+        a{
+      img {
+            
+              width:300px;
+          }
+       }
+  }
+}
