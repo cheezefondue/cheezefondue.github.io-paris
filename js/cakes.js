@@ -18,6 +18,7 @@ $(function(){
             }
         })
 
+    // 팝업 이미지 띄우기
     //.bg의 너비
     var bgWidth = $(".bg").outerWidth();
     var bgHeight = $(".bg").outerHeight();
@@ -39,6 +40,7 @@ $(function(){
             "background-image":"url("+ $src +")",
             "left":$left,
             "top":$top
+            
         })
         $(".popupImg").slideDown(500);
     })

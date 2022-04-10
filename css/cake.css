@@ -43,7 +43,7 @@
 }
 .Wrap .innerBox section h4, .Wrap .innerBox section p {
   text-align: left;
-  padding-top: 15px;
+  padding: 5px 0;
   -webkit-transform: translateX(-55%);
           transform: translateX(-55%);
 }

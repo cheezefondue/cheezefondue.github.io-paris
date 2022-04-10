@@ -7,7 +7,6 @@ $(function(){
         .siblings()
         .removeClass("active");
         
-
         $(".tabList>ul").eq(selectNum).css("display","block")
         .siblings().css("display","none");
     })

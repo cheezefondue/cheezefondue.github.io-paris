@@ -10,7 +10,12 @@
   font-weight: normal;
   font-style: normal;
 }
-.Wrap {
+@media screen and (max-width: 767px) {
+  body header #menu {
+    height: 1800px;
+  }
+}
+body .Wrap {
   font-family: "GmarketSansLight", sans-serif;
   word-break: keep-all;
   width: 100%;
@@ -18,23 +23,24 @@
   left: 50%;
   margin: 50 auto;
   color: #333333;
+  font-size: 16px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-.Wrap section h2 {
+body .Wrap section h2 {
   text-align: center;
   padding-top: 100px;
 }
-.Wrap section > p {
+body .Wrap section > p {
   text-align: center;
   padding-top: 35px;
 }
 @media screen and (max-width: 767px) {
-  .Wrap section > p {
+  body .Wrap section > p {
     padding-top: 50px;
   }
 }
-.Wrap section .btn {
+body .Wrap section .btn {
   overflow: hidden;
   position: absolute;
   top: 43%;
@@ -42,15 +48,16 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-@media screen and (max-width: 360px) {
-  .Wrap section .btn {
-    width: 73%;
+@media screen and (max-width: 767px) {
+  body .Wrap section .btn {
+    position: absolute;
+    top: 48%;
   }
 }
-.Wrap section .btn li {
+body .Wrap section .btn li {
   float: left;
 }
-.Wrap section .btn li a {
+body .Wrap section .btn li a {
   display: block;
   padding: 10px 20px;
   background: #ccc;
@@ -62,24 +69,25 @@
   font-size: 24px;
 }
 @media screen and (max-width: 767px) {
-  .Wrap section .btn li a {
-    font-size: 18px;
+  body .Wrap section .btn li a {
+    padding: 5px 10px;
+    font-size: 17px;
   }
 }
 @media screen and (max-width: 360px) {
-  .Wrap section .btn li a {
-    font-size: 16px;
+  body .Wrap section .btn li a {
+    font-size: 14px;
   }
 }
-.Wrap section .btn li.active > a {
+body .Wrap section .btn li.active > a {
   border: 1px solid #fff;
   background: #222;
   color: white;
 }
-.Wrap section .tabList {
+body .Wrap section .tabList {
   position: relative;
 }
-.Wrap section .tabList ul {
+body .Wrap section .tabList ul {
   position: absolute;
   border: 1px solid #ccc;
   background: white;
@@ -89,7 +97,7 @@
   padding-left: 2%;
 }
 @media screen and (max-width: 767px) {
-  .Wrap section .tabList ul {
+  body .Wrap section .tabList ul {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -98,38 +106,49 @@
     width: 95%;
   }
 }
-.Wrap section .tabList ul li {
+body .Wrap section .tabList ul:first-child {
+  display: none;
+}
+body .Wrap section .tabList ul li {
   width: calc(100% / 3);
   line-height: 3;
   float: left;
+  display: block;
 }
 @media screen and (max-width: 767px) {
-  .Wrap section .tabList ul li {
+  body .Wrap section .tabList ul li {
+    width: 100%;
     padding: 15px 0;
+    line-height: 2;
   }
 }
-.Wrap section .tabList ul li div {
+body .Wrap section .tabList ul li div {
   position: absolute;
 }
 @media screen and (max-width: 767px) {
-  .Wrap section .tabList ul li div {
+  body .Wrap section .tabList ul li div {
     padding: 0;
   }
 }
-.Wrap section .tabList ul li a img {
+body .Wrap section .tabList ul li a img {
   width: 95%;
   display: block;
 }
 @media screen and (max-width: 767px) {
-  .Wrap section .tabList ul li a img {
+  body .Wrap section .tabList ul li a img {
     width: 95%;
   }
 }
-.Wrap section .tabList ul li a p:nth-child(3) {
+body .Wrap section .tabList ul li a p:nth-child(3) {
   border-radius: 50px;
   background: red;
   color: #ffffff;
   width: 45px;
   text-align: left;
   padding: 0 5px;
+}
+@media screen and (max-width: 767px) {
+  body .Wrap section .tabList ul li a p span {
+    display: block;
+  }
 }

@@ -7,13 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/parishf.css">
     <link rel="stylesheet" href="css/cakes.css">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/catering.js"></script>
+    <script src="js/fullpage.js"></script>
+    <script src="js/paris.js"></script>
     <script src="js/cakes.js"></script>
 </head>
-
 <body>
+    <header>
+        <div class="mham"><a href="#void"></a></div>
+        <ul id="menu">
+            <li data-menuanchor="firstPage"><a href="index.html"><img src="images/logo.jpg" alt=""></a></li>
+            <li><a href="#void"><img src="icon/icon_home.svg">브랜드 스토리</a></li>
+            <li><a href="#void"><img src="icon/icon_gift.svg">선물세트 배송 주문</a></li>
+            <li><a href="catering.html"><img src="icon/icon_pack.svg">케이터링 픽업/배달 주문</a></li>
+            <li><a href="cake.html"><img src="icon/icon_cake.svg">케이크 주문 안내</a></li>
+            <li data-menuanchor="4thpage"><a href="index.html#4thpage"><img src="icon/icon_reflet.svg">리플렛</a></li>
+        </ul>
+    </header>
     <div class="Wrap">
         <section>
             <div class="innerBox clearFix">
@@ -22,7 +35,7 @@
                 <span><a href="#void"><img src="images/cake1.jpg" alt=""></a></span>
                 <div class="right">
                     <h1>딸기 레어 치즈 타르트</h1>
-                    <h1>가격문의(상세정보 참조)<span><a href="#void"></a></span>
+                    <h1>가격문의(상세정보 참조)<span><a href="#void"><img src="icon/icon_share.svg" alt=""></a></span>
                     </h1>
                     <p>■ 가까운 점포로 문의하거나, 해피오더앱을 이용해주세요!</p>
                     <p>■ 원산지 : 빵류[끼리크림치즈/프랑스산,생크림[유크림(우유/국산)], 딸기/국산,생크림①[유크림(우유/국산)
@@ -42,13 +55,58 @@
                     <li><a href="#void">구매평</a></li>
                     <li><a href="#void">Q&A</a></li>
                 </ul>
-                <h1>전 제품은 비회원 주문만 가능합니다.</h1>
-                <p><img src="images/cakes.jpg" alt=""></p>
-                <h1>판매가 : 46,000원</h1>
-                <p>※ 상기 이미지는 실제와 다를 수 있습니다. </p>
-                <h1>해피오더 앱 바로가기↓</h1>
-                <div><a href="https://www.happyorder.co.kr/cg?am=main/home&showType=bridge&brandCode=PCcro">
-                        <img src="images/order.png" alt=""></a>
+                <div class="tabList">
+                    <ul id="info">
+                        <h1>전 제품은 비회원 주문만 가능합니다.</h1>
+                        <p><img src="images/cakes.jpg" alt=""></p>
+                        <h1>판매가 : 46,000원</h1>
+                        <p>※ 상기 이미지는 실제와 다를 수 있습니다. </p>
+                        <h1>해피오더 앱 바로가기↓</h1>
+                        <div><a href="https://www.happyorder.co.kr/cg?am=main/home&showType=bridge&brandCode=PCcro">
+                                <img src="images/order.png" alt=""></a>
+                        </div>
+                    </ul>
+                    <ul id="reviews">
+                        <li>상품을 구매하신 분들이 작성한 리뷰입니다.</li>
+                        <li><a href="#void">구매평 등록하기</a></li>
+                        <li>등록된 구매평이 없습니다.</li>
+                    </ul>
+                    <ul id="QA">
+                        <li><span><a href="#void">상품문의</a></span><span><a href="#void">1:1 문의</a></span></li>
+                        <li>
+                            <span>상태</span><span>제목</span><span>작성자</span><span>등록일</span>
+                        </li>
+                        <li>
+                            <span><a href="#void">답변완료</a></span>
+                            <span><a href="#void">딸기 레어치즈 타르트 매장예약 해야하나욤? 1</a></span>
+                            <span><a href="#void">은영</a></span>
+                            <span>2022-03-30 01:30</span>
+                        </li>
+                        <li>
+                            <span><a href="#void">답변완료</a></span>
+                            <span><a href="#void">비밀글입니다. 1</a></span>
+                            <span><a href="#void">제이</a></span>
+                            <span>2022-03-01 19:07</span>
+                        </li>
+                        <li>
+                            <span><a href="#void">답변완료</a></span>
+                            <span><a href="#void">상품주문가능한가요 1</a></span>
+                            <span><a href="#void">이은혜</a></span>
+                            <span>2022-03-01 01:22</span>
+                        </li>
+                        <li>
+                            <span><a href="#void">답변완료</a></span>
+                            <span><a href="#void">딸기타르트케이크 문의 1</a></span>
+                            <span><a href="#void">소현</a></span>
+                            <span>2022-02-28 12:59</span>
+                        </li>
+                        <li>
+                            <span><a href="#void">답변완료</a></span>
+                            <span><a href="#void">기프티콘을 받았는데 배송가능한가요? 1</a></span>
+                            <span><a href="#void">딸기덕후</a></span>
+                            <span>2022-02-25 12:16</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
